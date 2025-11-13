@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 user='root'
-password=''
+password='yapadlez'
 host='localhost'
 port=3306
 database='animals'

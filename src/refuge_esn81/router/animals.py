@@ -15,6 +15,19 @@ async def get_all_animals(db: Session = Depends(get_db)):
 
 @animalsRouter.post("/")
 async def create_animal(animal: AnimalCreate, db: Session = Depends(get_db)):
+    """
+        Crée un nouvel animal.
+
+        Cette route permet d'ajouter un animal dans le refuge, avec éventuellement
+        une espèce associée (via `species_id`).
+
+        Args:
+            animal (AnimalCreate): Données de l'animal à créer.
+            db (Session): Session de base de données injectée par FastAPI.
+
+        Returns:
+            Animal: L'animal créé.
+    """
     return service.create_animal(db, animal)
 
 # @animalsRouter.get("/{name}")

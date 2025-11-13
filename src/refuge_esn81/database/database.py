@@ -2,8 +2,18 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+user='root'
+password=''
+host='localhost'
+port=3306
+database='animals'
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:admin@localhost:3306/animals"
+# URL de connexion MariaDB
+SQLALCHEMY_DATABASE_URL = (
+    f"mysql+pymysql://{user}:{password}@"
+    f"{host}:{port}/{database}"
+)
+
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
